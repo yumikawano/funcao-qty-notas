@@ -79,6 +79,11 @@ Dentre o valor total de 10.0 da nota será distribuída da seguinte maneira:
  ##### Testes
  - Os testes devem ser criados utilizando a ferramenta `Jest` e colocados na pasta `tests/unit` como o arquivo `Troco.spec.js`, você pode utilizar esse mesmo arquivo para testar.
  - O arquivo `Troco.spec.js` possui um teste de exemplo, que deverá ser atualizado ao final da prova.
+ 
+ ##### Lista de comandos
+ - Para instalar as dependências navegue até a pasta do projeto e execute ```yarn``` ou ```npm install```
+ - Para executar o arquivo pelo console navegue até a pasta do projto e execute ```node console/troco.js```
+ - Para executar os testes unitários navegue até a pasta do projeto e execute ```yarn test``` ou ```npm run test```
 
 #### Considerações
 Os candidatos com melhores avaliações receberão nosso contato marcando uma entrevista onde conheceremos melhor seu perfil.
