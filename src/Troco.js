@@ -1,8 +1,4 @@
-/**
- * Essa classe possui o metodo getQtdeNotas ele não está completo e cabe a você concluí-lo de acordo com os requisitos.
- */
 class Troco {
-
   static getQtdeNotas(reais) {
     const notasQtd = {
       '100': 0,
@@ -17,19 +13,33 @@ class Troco {
       '0.1': 0,
       '0.05': 0,
       '0.01': 0
-    }
-
-    /*
-     * Coloque o seu código aqui.
-     * Você é livre para criar classes, arquivos e funções da maneira que achar melhor.
-     * Esse método deve retornar a quantidade de notas e moedas necessária para o valor em reais passado para ele
-     *
-     * Exemplo:
-     * getQtdeNotas(100.00) // Deve retornar algo como {'100': 1}
-     */
-
-    return notasQtd
+    };
+    return this.calcularQuantidadeNotas(reais, notasQtd);
   }
+
+  static calcularQuantidadeNotas(valorTotal, quantidadeNotas){
+
+      // Array contendo todos os valores da maior nota para a menor
+      const valoresNotas = [100, 50, 20, 10, 5, 2, 1, 0.5, 0.25, 0.1, 0.05, 0.01];
+
+      // Descobre o número de posições que o array possui (contando índice 0)
+      const numeroNotasDisponiveis = valoresNotas.length - 1;
+ 
+        // O laço irá percorrer todas as notas enquanto o valor for maior que 0
+        let i = 0;
+        while(i <= numeroNotasDisponiveis && valorTotal > 0){
+            const notaAtual = valoresNotas[i];
+            while(valorTotal >= notaAtual){
+                quantidadeNotas[notaAtual]++;
+                valorTotal = Number(valorTotal - notaAtual).toFixed(2);
+            }
+
+            i++;
+        }
+        return quantidadeNotas;
+    }
 }
 
-module.exports = Troco
+module.exports = Troco;
+
+
